@@ -3,7 +3,13 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://navigation-maps-frontend.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json()); 
 
 
