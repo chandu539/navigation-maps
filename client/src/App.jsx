@@ -64,7 +64,7 @@ const App = () => {
 
   const fetchCoordinates = async (address, setCoords) => {
     try {
-      const response = await axios.get(`http://localhost:5000/geocode?address=${address}`);
+      const response = await axios.get(`https://navigation-maps-backend.vercel.app/geocode?address=${address}`);
       setCoords([response.data.lat, response.data.lng]);
     } catch (error) {
       console.error("Error fetching coordinates:", error);
